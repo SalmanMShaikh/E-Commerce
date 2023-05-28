@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/service/modal/modal.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -8,16 +8,16 @@ import { ModalService } from 'src/app/service/modal/modal.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private modalService: ModalService) {
+  constructor(private router: Router) {
 
   }
 
   ngOnInit(): void {
   }
-  openModal() {
 
-    this.modalService.openModal();
-    console.log('Hello,"""""""""""""""')
+  openForm() {
+    this.router.navigateByUrl('master');
   }
+
 
 }
