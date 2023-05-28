@@ -1,0 +1,31 @@
+.product-title,
+.product-price,
+.product-sku {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 260px;
+}
+
+.card {
+  padding: 20px;
+  margin: 50px;
+  width: 300px;
+}
+
+.card img {
+  width: 260px;
+  height: 260px;
+  margin-bottom: 15px;
+}
+
+.delete-button,
+.edit-button {
+  margin-top: 10px;
+}
+
+
+.cards-global {
+  display: flex;
+  flex-wrap: wrap;
+}

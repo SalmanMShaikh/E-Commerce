@@ -1,0 +1,27 @@
+.header-icon {
+  padding-left: 10px;
+  font-size: 30px;
+}
+
+
+
+.form-control {
+  border-radius: 3px;
+  width: 200px;
+  margin-left: 30px;
+}
+
+.search-icon {
+  margin-left: 10px;
+  color: white;
+  cursor: pointer;
+
+}
+
+.add-product {
+  margin-right: 10px;
+}
+
+.add-icon {
+  font-size: 20px;
+}
