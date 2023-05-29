@@ -3,7 +3,15 @@ import { ProductModel } from "../connection/connection";
 
 const getProductData = async (req: Request, res: Response) => {
     try {
-        let productData = await ProductModel.find()
+        let id: number = -1;
+        let productData: any = [];
+        if (req.params && req.params.id) {
+            id = parseInt(req.params.id)
+            productData = await ProductModel.findOne({ where: { id } })
+        } else {
+            productData = await ProductModel.find()
+        }
+
         return res.json({ status: 200, data: productData })
     } catch (err) {
         if (err) {

@@ -10,14 +10,16 @@ export class ProductService {
   constructor(private httpClient: HttpClient) { }
 
 
-  createProduct(product: any) {
+  createProduct(product: FormData) {
     return this.httpClient.post(`${config.apiUrl}/addProductData`, product);
   }
 
+  getProductById(id: any) {
+    return this.httpClient.get(`${config.apiUrl}/getProductDataById/${id}`);
+  }
 
-
-  updateEmployee(id: number, product: any) {
-    return this.httpClient.put(`${config.apiUrl}/${id}`, product);
+  updateProduct(id: number, product: any) {
+    return this.httpClient.post(`${config.apiUrl}/updateProductData/${id}`, product);
   }
 
 

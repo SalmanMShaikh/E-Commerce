@@ -15,6 +15,10 @@ router.post('/updateProductData/:id',
     updateProductData
 )
 
+router.get('/getProductDataById/:id',
+    getProductData
+)
+
 router.post('/addProductData',
     multer().any(),
     adddProductData

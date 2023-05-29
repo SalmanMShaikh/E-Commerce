@@ -23,7 +23,16 @@ export class ModalComponent implements OnInit {
   }
 
   saveProduct() {
-    this.productService.createProduct(this.product).subscribe(data => {
+    const formData = new FormData();
+    formData.append('name', this.product.name);
+    formData.append('price', this.product.price.toString());
+
+    if (this.product.images) {
+      for (let i = 0; i < this.product.images.length; i++) {
+        formData.append('images', this.product.images[i])
+      }
+    }
+    this.productService.createProduct(formData).subscribe(data => {
       console.log(data);
       this.goToProductList();
     },
@@ -34,26 +43,15 @@ export class ModalComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 
-  onFileSelected(event) {
+  onFileSelected(event: any) {
 
-    const file: File = event.target.files[0];
-    const formData = new FormData();
-
-    if (file) {
-
-      this.fileName = file.name;
-      console.log(event.target.files, '<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<', this.product, '<<<<<<', formData)
-      if (event.target.files && event.target.files['length'] > 0) {
-        for (let index = 0; index < event.target.files['length']; index++) {
-          console.log('<<<<<<<<<<<<<<<<<nooooooooooooo', event.target.files[index])
-          formData.append('images', event.target.files[index])
-        }
-      }
-      console.log(formData, '<<<<<<<<<<<<<<<<why')
-
-
-
+    const files: FileList = event.target.files;
+    if (files && files.length > 0) {
+      this.product.images = files;
+      this.fileName = files[0].name
     }
+
+
   }
 
   onSubmit() {

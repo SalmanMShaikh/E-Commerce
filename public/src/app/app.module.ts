@@ -7,13 +7,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { ListingComponent } from './components/listing/listing.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalComponent } from './components/modal/modal.component';
+import { UpdateProductComponent } from '../app/components/update-product/update-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ListingComponent,
-    ModalComponent
+    ModalComponent,
+    UpdateProductComponent
   ],
   imports: [
     BrowserModule,

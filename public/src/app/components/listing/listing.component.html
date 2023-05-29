@@ -5,7 +5,7 @@
 
       <h5 class="product-title">{{item.name}}</h5>
       <p class=" product-price" title="{{item.price}}"><strong>Price:</strong> $ {{item.price}} </p>
-      <button class="btn btn-primary edit-button">Edit</button>
+      <button class="btn btn-primary edit-button" (click)="updateProduct(item.id)">Edit</button>
       <button class="btn btn-danger delete-button" (click)="deleteProduct(item.id)">Delete</button>
     </div>
     <!-- <div class="card">
