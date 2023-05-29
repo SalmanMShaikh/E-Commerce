@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ModalComponent } from './components/modal/modal.component';
 
 const routes: Routes = [
-  { path: '/form', component: ModalComponent },
+  { path: 'form', component: ModalComponent },
 
 ];
 

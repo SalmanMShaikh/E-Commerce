@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalService } from 'src/app/service/modal/modal.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
@@ -16,7 +15,7 @@ export class HeaderComponent implements OnInit {
   }
 
   openForm() {
-    this.router.navigateByUrl('master');
+    this.router.navigateByUrl('form');
   }
 
 

@@ -20,7 +20,7 @@ import { ModalComponent } from './components/modal/modal.component';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [ListingComponent, ModalComponent],
+  providers: [ModalComponent, ListingComponent],
   bootstrap: [AppComponent]
 
 })
