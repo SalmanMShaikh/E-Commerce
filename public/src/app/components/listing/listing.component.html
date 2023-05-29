@@ -1,7 +1,20 @@
 <div class="container">
   <div class="cards-global">
     <div class="card" *ngFor="let item of productList">
-      <img src="assets/images/1636.jpg" alt="noimage" />
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="..." alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="..." alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="..." alt="Third slide">
+          </div>
+        </div>
+      </div>
+      <!-- <img src="assets/images/1636.jpg" alt="noimage" /> -->
       <h5 class="product-title">{{item.name}}</h5>
       <p class=" product-price" title="{{item.price}}"><strong>Price:</strong> $ {{item.price}} </p>
       <button class="btn btn-primary edit-button">Edit</button>
