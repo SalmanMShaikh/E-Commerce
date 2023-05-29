@@ -16,8 +16,8 @@ export class UpdateProductComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    // this.id = this.route.snapshot.params['id'];
-    this.id = 20
+    this.id = this.route.snapshot.params['id'];
+    // this.id = 20
 
     this.productService.getProductById(this.id).subscribe((res: { data: any, status: number }) => {
       if (res && res.data) {

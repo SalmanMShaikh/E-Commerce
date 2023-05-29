@@ -10,3 +10,8 @@
   display: flex;
   justify-content: center;
 }
+
+.header-icon {
+  padding-left: 10px;
+  font-size: 30px;
+}

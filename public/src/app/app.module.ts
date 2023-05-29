@@ -8,6 +8,7 @@ import { ListingComponent } from './components/listing/listing.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalComponent } from './components/modal/modal.component';
 import { UpdateProductComponent } from '../app/components/update-product/update-product.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { UpdateProductComponent } from '../app/components/update-product/update-
     HeaderComponent,
     ListingComponent,
     ModalComponent,
-    UpdateProductComponent
+    UpdateProductComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,

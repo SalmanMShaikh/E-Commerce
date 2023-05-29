@@ -35,8 +35,8 @@ export class ListingComponent implements OnInit {
 
   }
 
-  updateProduct() {
-    this.router.navigateByUrl('/update');
+  updateProduct(id: number) {
+    this.router.navigateByUrl(`update/${id}`);
   }
 
 
