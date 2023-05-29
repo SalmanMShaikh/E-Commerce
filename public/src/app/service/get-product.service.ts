@@ -11,7 +11,7 @@ export class GetProductService {
   constructor(private http: HttpClient) { }
 
   getProduct() {
-    return this.http.get<any>(`${config.apiUrl}getProductData`).pipe(map((res: any) => {
+    return this.http.get<any>(`${config.apiUrl}/getProductData`).pipe(map((res: any) => {
       return res
     }))
   }

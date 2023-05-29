@@ -1,1 +1,12 @@
+.form-field {
+  max-width: 100px;
+}
 
+.form-card {
+  max-width: 400px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}

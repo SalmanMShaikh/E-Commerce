@@ -1,15 +1,15 @@
 import { Request, Response } from 'express';
-import { config } from '../../config/config';
+import { config } from '../config/config';
 import { ProductModel } from '../connection/connection';
 import fs from 'fs';
 import path from 'path';
 
 const updateProductData = async (req: Request, res: Response) => {
     try {
-        let productId: number = Number(req.body.id);
+        let productId: number = -1;
 
-        if (req.body && req.body.id) {
-            delete req.body.id
+        if (req.params && req.params.id) {
+            productId = Number(req.params.id)
         }
 
         interface Product {

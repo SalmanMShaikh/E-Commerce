@@ -10,7 +10,7 @@ export class DeleteProductService {
 
   constructor(private http: HttpClient) { }
   deleteProduct(id: number): Observable<unknown> {
-    const url = `${config.apiUrl}deleteProductData/${id}`;
+    const url = `${config.apiUrl}/deleteProductData/${id}`;
     return this.http.delete(url);
   }
 }

@@ -10,7 +10,7 @@ router.get('/getProductData',
     getProductData
 )
 
-router.post('/updateProductData',
+router.post('/updateProductData/:id',
     multer().any(),
     updateProductData
 )

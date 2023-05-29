@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   }
 
   openForm() {
-    this.router.navigateByUrl('form');
+    this.router.navigateByUrl('/form');
   }
 
 
