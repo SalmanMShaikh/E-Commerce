@@ -1,0 +1,57 @@
+<!-- <div class="container">
+  <div class="cards-global">
+    <div class="card" *ngFor="let item of productList">
+      <img src="assets/images/1636.jpg" alt="noimage" />
+
+      <h5 class="product-title">{{item.name}}</h5>
+      <p class=" product-price" title="{{item.price}}"><strong>Price:</strong> $ {{item.price}} </p>
+      <button class="btn btn-primary edit-button" (click)="updateProduct(item.id)">Edit</button>
+      <button class="btn btn-danger delete-button" (click)="deleteProduct(item.id)">Delete</button>
+    </div>
+
+  </div>
+</div> -->
+
+
+
+<div class="container">
+  <div class="cards-global">
+    <div class="card" *ngFor="let item of productList">
+      <div class="image-slider">
+        <ng-container *ngIf="item.images && item.images.length > 0; else noImages">
+
+          <img [src]="getImagePath(item.images[0])" [alt]="image" />
+
+        </ng-container>
+        <ng-template #noImages>
+          <img src="assets/images/1636.jpg" alt="noimage" />
+        </ng-template>
+      </div>
+
+      <h5 class="product-title">{{ item.name }}</h5>
+      <p class="product-price" title="{{ item.price }}"><strong>Price:</strong> $ {{ item.price }}</p>
+      <button class="btn btn-primary edit-button" (click)="updateProduct(item.id)">Edit</button>
+      <button class="btn btn-danger delete-button" (click)="deleteProduct(item.id)">Delete</button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <div class="container">
+  <div class="cards-global">
+    <ngu-carousel [inputs]="carouselConfig">
+      <ngu-item *ngFor="let item of productList">
+        <div class="card">
+          <div class="image-slider">
+            <img [src]="'assets/images/' + item.images[0]" alt="noimage" />
+          </div>
+          <h5 class="product-title">{{ item.name }}</h5>
+          <p class="product-price" title="{{ item.price }}"><strong>Price:</strong> $ {{ item.price }}</p>
+          <button class="btn btn-primary edit-button" (click)="updateProduct(item.id)">Edit</button>
+          <button class="btn btn-danger delete-button" (click)="deleteProduct(item.id)">Delete</button>
+        </div>
+      </ngu-item>
+    </ngu-carousel>
+  </div>
+</div> -->
