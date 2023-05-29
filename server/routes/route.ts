@@ -3,6 +3,7 @@ import getProductData from '../controllers/getProductData';
 import updateProductData from '../controllers/updateProductData';
 import adddProductData from '../controllers/addProductData';
 import deleteProductData from '../controllers/deleteProductData';
+import multer from 'multer';
 const router = express.Router();
 
 router.get('/getProductData',
@@ -10,10 +11,12 @@ router.get('/getProductData',
 )
 
 router.post('/updateProductData',
+    multer().any(),
     updateProductData
 )
 
 router.post('/addProductData',
+    multer().any(),
     adddProductData
 )
 

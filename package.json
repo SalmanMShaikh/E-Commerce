@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "startdev": "nodemon ./server/app.ts",
+    "start": "nodemon ./server/app.ts",
     "build": "tsc -p .",
     "startprod": "node ./production/app.js"
   },
@@ -18,7 +18,11 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/multer": "^1.4.7",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
     "pg": "^8.11.0",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.3.16"
