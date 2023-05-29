@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { config } from '../../../../config/config';
+import { config } from '../../../config/config';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -11,8 +11,7 @@ export class GetProductService {
   constructor(private http: HttpClient) { }
 
   getProduct() {
-    const apiUrl = config.apiUrl
-    return this.http.get<any>(`${apiUrl}getProductData`).pipe(map((res: any) => {
+    return this.http.get<any>(`${config.apiUrl}getProductData`).pipe(map((res: any) => {
       return res
     }))
   }
