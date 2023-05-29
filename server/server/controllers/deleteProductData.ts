@@ -17,9 +17,7 @@ const deleteProductData = async (req: Request, res: Response) => {
             let productDataImages: string[] = productData.images.split(',');
             productDataImages.forEach(fileName => {
                 let imagePath = path.join(config.imageUploadDir, fileName)
-                console.log(imagePath, '<<<<<<<<<<<<<<<<')
                 if (fs.existsSync(imagePath)) {
-                    console.log(imagePath, '<<<<<<<<<<<<<<<33<')
                     fs.unlinkSync(imagePath)
                 }
             })

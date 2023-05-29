@@ -18,7 +18,6 @@ export class ModalComponent implements OnInit {
   ngOnInit(): void {
     this.modalService.isOpenSubject.subscribe(isOpen => {
       this.isOpen = isOpen;
-      console.log('<<<<<<<<<<<<<<<<<<<<<<<<<<<', this.isOpen)
     });
   }
 
@@ -33,7 +32,6 @@ export class ModalComponent implements OnInit {
       }
     }
     this.productService.createProduct(formData).subscribe(data => {
-      console.log(data);
       this.goToProductList();
     },
       error => console.log(error));
@@ -55,7 +53,6 @@ export class ModalComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.product);
     this.saveProduct();
   }
 

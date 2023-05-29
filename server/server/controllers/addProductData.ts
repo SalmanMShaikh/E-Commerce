@@ -20,7 +20,6 @@ const addProductData = async (req: Request, res: Response) => {
 
 
         let imagesArray: string[] = []
-        console.log(req.files, '<<<<<<<<<<<<<<<<<<<<<<,why')
         if (req.files && Array.isArray(req.files) && req.files.length > 0) {
             req.files.forEach(file => {
                 let filename: string = `${Date.now()}_${Math.floor(Math.random() * 9000 + 1000)}_${file.originalname}`

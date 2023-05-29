@@ -27,7 +27,6 @@ export class ListingComponent implements OnInit {
       }
 
       this.productList = products;
-      console.log(res.status, ';<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<', products)
     })
   }
   deleteProduct(id: number) {
