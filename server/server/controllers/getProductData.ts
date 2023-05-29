@@ -8,9 +8,30 @@ const getProductData = async (req: Request, res: Response) => {
         if (req.params && req.params.id) {
             id = parseInt(req.params.id)
             productData = await ProductModel.findOne({ where: { id } })
+
+            if (!Array.isArray(productData)) {
+                productData.images = productData.images.split(',')
+            } else {
+                productData = productData.map(item => {
+                    item.images = item.images.split(',')
+                    return item
+                })
+            }
+
         } else {
             productData = await ProductModel.find()
+            productData = productData
+            if (!Array.isArray(productData)) {
+                productData.images = productData.images.split(',')
+            } else {
+                productData = productData.map(item => {
+                    item.images = item.images.split(',')
+                    return item
+                })
+            }
         }
+
+
 
         return res.json({ status: 200, data: productData })
     } catch (err) {
