@@ -27,5 +27,5 @@ AppDataSource.initialize().then(() => {
         console.log('server started on port', port)
     });
 }).catch((err) => {
-
+    console.log(err)
 })
