@@ -6,16 +6,16 @@ export class Product {
     @PrimaryGeneratedColumn()
     id: number
 
-    @Column()
+    @Column({ nullable: true })
     name: string
 
     @Column()
     @Generated("uuid")
     sku: string
 
-    @Column()
+    @Column({ nullable: true })
     price: number
 
-    @Column()
+    @Column({ nullable: true })
     images: string
 }

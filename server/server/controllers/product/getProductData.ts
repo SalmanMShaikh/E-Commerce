@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ProductModel } from "../connection/connection";
+import { ProductModel } from "../../connection/connection";
 
 const getProductData = async (req: Request, res: Response) => {
     try {
@@ -8,12 +8,15 @@ const getProductData = async (req: Request, res: Response) => {
         if (req.params && req.params.id) {
             id = parseInt(req.params.id)
             productData = await ProductModel.findOne({ where: { id } })
-
-            if (!Array.isArray(productData)) {
+            console.log(productData, '<<<<<<<<<<<<<<<<<<<<<here')
+            if (!Array.isArray(productData) && productData.images) {
                 productData.images = productData.images.split(',')
             } else {
-                productData = productData.map(item => {
-                    item.images = item.images.split(',')
+                productData = productData.map((item: any) => {
+                    if (item.images) {
+                        item.images = item.images.split(',')
+                    }
+
                     return item
                 })
             }
@@ -21,11 +24,13 @@ const getProductData = async (req: Request, res: Response) => {
         } else {
             productData = await ProductModel.find()
             productData = productData
-            if (!Array.isArray(productData)) {
+            if (!Array.isArray(productData) && productData) {
                 productData.images = productData.images.split(',')
             } else {
-                productData = productData.map(item => {
-                    item.images = item.images.split(',')
+                productData = productData.map((item: any) => {
+                    if (item.images) {
+                        item.images = item.images.split(',')
+                    }
                     return item
                 })
             }
@@ -35,6 +40,7 @@ const getProductData = async (req: Request, res: Response) => {
 
         return res.json({ status: 200, data: productData })
     } catch (err) {
+        console.log(err, '<<<<<<<<<<<<<<<<<<<<<<<<<here')
         if (err) {
             return res.json({ status: 400, message: 'Something went wrong.' })
         }

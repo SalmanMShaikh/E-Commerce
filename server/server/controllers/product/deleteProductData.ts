@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { ProductModel } from '../connection/connection';
-import { config } from '../config/config';
+import { ProductModel } from '../../connection/connection';
+import { config } from '../../config/config';
 import fs from 'fs';
 import path from 'path';
 
